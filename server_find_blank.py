@@ -35,7 +35,7 @@ def find_and_replace_blank(image_path, stamp):
     with Image.open(image_path) as img:
 
         for stamp_value in stamp.split(','):
-            stamp_img = Image.open('./Qu_picture/'+stamp_value)
+            stamp_img = Image.open('./picture_stamp/'+stamp_value)
 
             width, height = stamp_img.size
 
@@ -49,7 +49,6 @@ def find_and_replace_blank(image_path, stamp):
                 # ทำการใส่ stamp ลงไปในพื้นที่ว่าง
                 img.paste(stamp_img, blank_area, stamp_img)
 
-    # บันทึกไฟล์ที่ได้หลังจากทำการประมวลผล
     output_path = 'output_image.png'
     img.save(output_path)
 

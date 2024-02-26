@@ -27,7 +27,8 @@ def process_file_blank():
     if request.files['file']:
         file = request.files['file']
         file_data = file.read()
-        response = cnn.detech(model,BytesIO(file_data),class_names)
+        model_cnn = cnn(model,class_names)
+        response = model_cnn.detech(BytesIO(file_data))
     return jsonify({'status': 'successful', 'data': response})
 
 if __name__ == '__main__':

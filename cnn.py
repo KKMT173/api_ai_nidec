@@ -6,10 +6,10 @@ import numpy as np
 np.set_printoptions(suppress=True)
 
 class cnn:
-    def __init__(self):
-        pass
+    def __init__(self, model, class_names):
+        self.model = model
 
-    def detech(self, model, file, class_names):
+    def detech(self, file):
 
         image = cv2.resize(file, (224, 224), interpolation=cv2.INTER_AREA)
 
@@ -20,9 +20,9 @@ class cnn:
         image = (image / 127.5) - 1
 
         # Predicts the model
-        prediction = model.predict(image)
+        prediction = self.model.predict(image)
         index = np.argmax(prediction)
-        class_name = class_names[index]
+        class_name = self.class_names[index]
         confidence_score = prediction[0][index]
 
         # Print prediction and confidence score
