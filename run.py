@@ -30,3 +30,5 @@ class cnn:
         print("Confidence Score:", str(np.round(confidence_score * 100))[:-2], "%")
 
         return [class_name[2:],str(np.round(confidence_score * 100))[:-2]]
+
+        # sfsqf
