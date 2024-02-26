@@ -22,6 +22,7 @@ def getHello():
 @app.route(f'{path_route}CNN', methods=['POST'])
 def process_file_blank():
     global class_names
+    print(class_names)
     response = {}
     print(request.files)
     if request.files['file']:
