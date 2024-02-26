@@ -12,15 +12,7 @@ model = load_model("keras_Model.h5", compile=False)
 class_names = open("labels.txt", "r").readlines()
 
 # CAMERA can be 0 or 1 based on default camera of your computer
-# camera = cv2.VideoCapture(0)
-
-class ClassName(object):
-    """docstring for ClassName"""
-    def __init__(self, arg):
-        super(ClassName, self).__init__()
-        self.arg = arg
-        
-
+camera = cv2.VideoCapture(0)
 
 while True:
     # Grab the webcamera's image.
