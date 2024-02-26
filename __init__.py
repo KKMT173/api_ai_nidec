@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from keras.models import load_model
+from io import BytesIO
 
 path_route = "/AI/"
 
@@ -21,7 +22,8 @@ def process_file_blank():
     response = {}
     if request.files['file']:
         file = request.files['file']
-        response = class.run(model,file)
+        file_data = file.read()
+        response = class.run(model,BytesIO(file_data))
     return jsonify({'status': 'successful', 'data': response})
 
 if __name__ == '__main__':
