@@ -9,7 +9,7 @@ class cnn:
     def __init__(self):
         pass
 
-    def detech(self, model, file):
+    def detech(self, model, file, class_names):
 
         image = cv2.resize(file, (224, 224), interpolation=cv2.INTER_AREA)
 
