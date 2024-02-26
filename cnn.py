@@ -8,9 +8,10 @@ np.set_printoptions(suppress=True)
 class cnn:
     def __init__(self, model, class_names):
         self.model = model
+        self.class_names =class_names
 
     def detech(self, file):
-
+        print(file)
         image = cv2.resize(file, (224, 224), interpolation=cv2.INTER_AREA)
 
         # Make the image a numpy array and reshape it to the models input shape.
