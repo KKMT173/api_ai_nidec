@@ -15,7 +15,7 @@ model = load_model("./model/keras_model.h5", compile=False)
 
 @app.route(f'{path_route}HELLO', methods=['GET'])
 def getHello():
-    return jsonify({'status': 'success', 'data': 'hello'})
+    return jsonify({'status': 'success', 'data': 'hello kao'})
 
 @app.route(f'{path_route}CNN', methods=['POST'])
 def process_file_blank():
